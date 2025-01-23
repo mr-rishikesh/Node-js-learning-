@@ -1,24 +1,26 @@
 const mongoose = require('mongoose');
+
+// this cluster db project used in the book store api
 mongoose.connect('mongodb+srv://rishikeshkumar:rishikesh123@cluster0.lie6d.mongodb.net/').then(
     () => { console.log('Database connected successfully')}
 ).catch((err) => console.log("Error found here" , err));
 
 
-const userSchema = new mongoose.Schema({
-    name : String ,
-    email : String , 
-    age : Number , 
-    isActive : Boolean ,
-    tags : [String] ,
-    createdAt : {type : Date , default : Date.now}
-});
+// const userSchema = new mongoose.Schema({
+//     name : String ,
+//     email : String , 
+//     age : Number , 
+//     isActive : Boolean ,
+//     tags : [String] ,
+//     createdAt : {type : Date , default : Date.now}
+// });
 
-// create a user model
-const User = mongoose.model('User' , userSchema);
+// // create a user model
+// const User = mongoose.model('User' , userSchema);
 
 async function runQueryExample(){
     try {
-        //create a new document 
+       // create a new document 
         // const newUser = await User.create({
         //     name : "Updated  user " ,
         //     email : "aman@gmail.com" , 
