@@ -33,10 +33,34 @@ const uploadImage = async(req , res) => {
 
     } catch (error) {
         console.log("error found ! try after some time" , error) 
+        res.status(500).json({
+            success : false ,
+            message : "Image not uploaded try again"
+        })
        
     }
     
     
 } 
+const fetchImagesController = async(req , res) => {
+    try {
+        // getting all images\
+        const images = await Image.find({});
+        res.status(201).json({
+            success : true ,
+            message : "fetched all  images" ,
+            data : images
+        })
+        
+    } catch (error) {
+        console.log("error found ! try after some time" , error) 
+        res.status(500).json({
+            success : false ,
+            message : "Image not fetched try again"
+        })
+       
+        
+    }
+}
 
-module.exports = {uploadImage}
+module.exports = {uploadImage , fetchImagesController}

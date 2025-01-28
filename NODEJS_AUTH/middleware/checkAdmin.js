@@ -12,5 +12,20 @@ const checkAdmin = (req , res , next) => {
 
     next();
 }
+const checkUser = (req , res , next) => {
+    if(req.userInfo.role !== 'user') {
+        res.status(403).json({
+            success : false ,
+            message : "You can not excess user panel"
+        })
 
-module.exports = checkAdmin
+        return;
+    }
+
+    next();
+}
+
+
+
+
+module.exports = {checkAdmin , checkUser }

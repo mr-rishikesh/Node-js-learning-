@@ -5,7 +5,7 @@ const authRoutes = require("./routes/auth_route");
 const homeRoutes = require("./routes/home_routes");
 const adminRoutes = require("./routes/admin_routes.js");
 const authMiddleware = require("./middleware/auth_middleware")
-const checkAdmin = require("./middleware/checkAdmin.js")
+const {checkAdmin , checkUser } = require("./middleware/checkAdmin.js")
 const uploadImageRoutes = require("./routes/image_routes.js")
 const app = express();
 
