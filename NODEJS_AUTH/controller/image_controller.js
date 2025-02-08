@@ -44,7 +44,7 @@ const uploadImage = async(req , res) => {
 } 
 const fetchImagesController = async(req , res) => {
     try {
-        // getting all images\
+        // getting all images
         const images = await Image.find({});
         res.status(201).json({
             success : true ,

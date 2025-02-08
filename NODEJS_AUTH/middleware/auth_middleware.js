@@ -14,7 +14,10 @@ const authMiddleware = (req , res , next) => {
        
     }
 
-    try {
+    try { //  below codes are very important if user are verified then we are putting 
+        // the values of user { id , username , password} in the req.userInfo 
+        // and the information we are using in the future for the usage of the pass and etc
+        
             const decodedTokenInfo = jwt.verify(token , process.env.JWT_SECRET_KEY);
          req.userInfo = decodedTokenInfo
          console.log(decodedTokenInfo)
